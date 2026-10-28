@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: fct_employees
+    description: "Final DWH Fact/Mart model with calculated salary tiers"
+    columns:
+      - name: employee_id
+        data_tests:
+          - unique
+          - not_null

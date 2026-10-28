@@ -1,0 +1,7 @@
+version: 2
+
+sources:
+  - name: sorce_ods
+    schema: dbo
+    tables:
+      - name: DEPI_data

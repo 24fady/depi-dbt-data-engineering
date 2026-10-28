@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: DIMEmployee
+    description: "Staging model for cleaning employee details and salary data"
+    columns:
+      - name: employee_id
+        data_tests:
+          - unique
+          - not_null
+      - name: salary
+        data_tests:
+          - not_null
+
+  - name: DIMCountry
+    description: "Distinct list of countries"
+    columns:
+      - name: country_name
+        data_tests:
+          - not_null
+
+  - name: DIMDepartment
+    description: "Staging model for extracting unique departments"
+
+  - name: DIMDate
+    description: "Staging model for extracting normalized employee birth dates and years"
+
+  - name: DIMGendar
+    description: "Staging model for extracting unique gender categories"
+
+  - name: OBT
+    description: "Operational staging model mapping employee IDs to raw cleaned salaries"
