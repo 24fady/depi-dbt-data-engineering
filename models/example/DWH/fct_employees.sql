@@ -1,5 +1,26 @@
 with source_data as (
     select * from {{ ref('OBT') }}
+),
+
+-- استدعاء المراجع هنا يجعل dbt يرسم أسهم العلاقات في الـ Lineage Graph
+dim_country as (
+    select * from {{ ref('dim_country') }}
+),
+
+dim_date as (
+    select * from {{ ref('dim_date') }}
+),
+
+dim_department as (
+    select * from {{ ref('dim_department') }}
+),
+
+dim_employee as (
+    select * from {{ ref('dim_employee') }}
+),
+
+dim_gender as (
+    select * from {{ ref('dim_gender') }}
 )
 
 select 
